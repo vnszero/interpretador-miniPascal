@@ -1,0 +1,25 @@
+regras lexicas
+
+<program> ::= program <id> ';'
+ [ const <const> { <const> } ]
+ [ var <var> { <var> } ]
+ <block> '.'
+<const> ::= <id> '=' <value> ';'
+<var> ::= <id> { ',' <id> } [ '=' <value> ] ';'
+<block> ::= begin [ <cmd> { ';' <cmd> } ] end
+<body> ::= <block> | <cmd>
+<cmd> ::= <assign> | <if> | <case> | <while> | <for> | <repeat> | <write> | <read>
+<assign> ::= <id> ':=' <expr>
+<if> ::= if <boolexpr> then <body> [ else <body> ]
+<case> ::= case <expr> of { <value> ':' <body> ';' } [ else <body> ';' ] end
+<while> ::= while <boolexpr> do <body>
+<repeat> ::= repeat [ <cmd> { ';' <cmd> } ] until <boolexpr>
+<for> ::= for <id> ':=' <expr> to <expr> do <body>
+<write> ::= (write | writeln) '(' [ <expr> { ',' <expr> } ] ')'
+<read> ::= readln '(' <id> { ',' <id> } ')'
+<boolexpr> ::= [ not ] <cmpexpr> { (and | or) <boolexpr> }
+<cmpexpr> ::= <expr> ('=' | '<>' | '<' | '>' | '<=' | '>=') <expr> | '(' <boolexpr> ')'
+<expr> ::= <term> { ('+' | '-') <term> }
+<term> ::= <factor> { ('*' | '/' | '%') <factor> }
+<factor> ::= <value> | <id> | '(' <expr> ')'
+<value> ::= <integer> | <real> | <string>
