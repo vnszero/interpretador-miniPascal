@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "lexical/LexicalAnalysis.h"
+#include "syntatic/SyntaticAnalysis.h"
 
 int main(int argc, char* argv[]){
     if(argc != 2){
@@ -12,11 +13,18 @@ int main(int argc, char* argv[]){
 		Lexeme lex;
 		LexicalAnalysis l(argv[1]);
 
+		///*
+		SyntaticAnalysis s(l);
+		s.start();
+		//*/
+
+		/*
 		while ((lex = l.nextToken()).type > 0){
 			std::cout << lex.str() << std::endl;
 		}
-
 		std::cout << lex.str() << std::endl;
+		//*/
+
 	} catch (const std::string& error) {
 		std::cerr << error << std::endl;
 	}

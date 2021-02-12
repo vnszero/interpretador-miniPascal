@@ -61,11 +61,11 @@ enum TokenType {
 	TT_OF,			  //of				- new
 	TT_FOR,			  //for				- new
 	TT_TO, 			  //to				- new 18
+	TT_VAR,           // var			ok
+	TT_CONST,		  // const 			new
 
 	// Others
 	//TT_NUMBER,      // number			- no longer a token
-	TT_VAR,           // var			ok
-	TT_CONST,		  // const 			new
 	TT_ID,
 	TT_INTEGER,		  // integer		new
 	TT_REAL,		  // real 			new
@@ -165,18 +165,18 @@ inline std::string tt2str(enum TokenType type) {
 			return "FOR";			//new
 		case TT_TO:
 			return "TO";			//new 18
-
-		// Others
 		case TT_VAR:
-			return "VAR";
+			return "VAR";			//virou palavra reservada
 		case TT_CONST:
 			return "CONST";			//new
+
+		// Others
+		case TT_ID:
+			return "ID";
 		case TT_INTEGER:
 			return "INTEGER";		//new
 		case TT_REAL:
 			return "REAL";			//new
-		case TT_ID:
-			return "ID";
 		case TT_STRING:
 			return "STRING";		//new
 

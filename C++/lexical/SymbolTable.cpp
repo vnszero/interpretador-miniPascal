@@ -53,6 +53,8 @@ SymbolTable::SymbolTable() {
 	m_symbols["of"] = TT_OF;			  			//new
 	m_symbols["for"] = TT_FOR;						//new
 	m_symbols["to"] = TT_TO;						//new 18
+	m_symbols["var"] = TT_VAR;
+	m_symbols["const"] = TT_CONST;
 }
 
 SymbolTable::~SymbolTable() {

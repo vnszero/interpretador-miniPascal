@@ -51,6 +51,10 @@ class SyntaticAnalysis {
 		void procTerm();
 		void procFactor();
 		void procValue();
+		void procId();
+		void procInteger();
+		void procReal();
+		void procString();
 
 };
 
