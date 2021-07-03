@@ -1,0 +1,25 @@
+(*<case> ::= case <expr> of { <value> ':' <body> ';' } [ else <body> ';' ] end*)
+program simples9;
+var
+    a, b;
+begin
+    readln(a);
+    case a of
+        3 :
+            begin
+                writeln('caso 3')
+            end;
+        2.0 :
+            begin
+                writeln('caso 2.0')
+            end;
+        'morango' :
+            begin
+                writeln('caso morango')
+            end;
+        else 
+            begin
+               writeln('caso padrao') 
+            end;
+    end
+end.

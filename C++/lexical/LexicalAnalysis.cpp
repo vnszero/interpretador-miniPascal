@@ -1,6 +1,4 @@
-//arquivo pendente de revisao
 #include <iostream>
-
 #include <string>
 #include <cctype>
 #include "LexicalAnalysis.h"
@@ -28,7 +26,7 @@ Lexeme LexicalAnalysis::nextToken() {
 		//*/
 
 		switch (state) {
-			case 1: //pronto
+			case 1:
 				if (c == ' ' || c == '\t' || c == '\r') {
 					state = 1;
 				} else if (c == '\n') {
@@ -53,7 +51,6 @@ Lexeme LexicalAnalysis::nextToken() {
 					lex.token += (char) c;
 					state = 9;
 				} else if (c == '\''){
-					lex.token += (char) c;
 					state = 11;
 				} else if (c == '.' || c == ',' || c == ';' ||
 						c == '=' || c == '+' || c == '-' ||
@@ -71,18 +68,18 @@ Lexeme LexicalAnalysis::nextToken() {
 					}
 				}
 				break;
-			case 2: //ok
+			case 2:
 				if (c == '*') {
 					lex.token = ""; //limpar '(' do lex.token
 					state = 3; //comentario
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //1st
+						ungetc(c, m_input);
 
 					state = 12;
 				}
 				break;
-			case 3: //ok
+			case 3:
 				if (c == '*') {
 					state = 4;
 				} else if (c == '\n'){
@@ -95,7 +92,7 @@ Lexeme LexicalAnalysis::nextToken() {
 					state = 3;
 				}
 				break;
-			case 4: //ok
+			case 4:
 				if (c == ')') {
 					state = 1;
 				} else if (c == '*'){
@@ -110,51 +107,51 @@ Lexeme LexicalAnalysis::nextToken() {
 					state = 3;
 				}
 				break;
-			case 5: //ok
+			case 5:
 				if (c == '>' || c == '=') {
 					lex.token += (char) c;
 					state = 12;
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //2nd
+						ungetc(c, m_input);
 
 					state = 12;
 				}
 				break;
-			case 6: //ok
+			case 6:
 				if (c == '=') {
 					lex.token += (char) c;
 					state = 12;
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //3rd
+						ungetc(c, m_input);
 
 					state = 12;
 				}
 				break;
-			case 7: //atribuicao
+			case 7:
 				if (c == '='){
 					lex.token += (char) c;
 					state = 12;
 				}else{
 					if (c != -1)
-						ungetc(c, m_input); //4th
+						ungetc(c, m_input);
 
 					state = 12;
 				}
 				break;
-			case 8: //ok
+			case 8:
 				if (c == '_' || isalpha(c) || isdigit(c)) {
 					lex.token += (char) c;
 					state = 8;
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //5th
+						ungetc(c, m_input);
 
 					state = 12;
 				}
 				break;
-			case 9: //int
+			case 9:
 				if (isdigit(c)) {
 					lex.token += (char) c;
 					state = 9;
@@ -163,25 +160,25 @@ Lexeme LexicalAnalysis::nextToken() {
 					state = 10;
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //6th
+						ungetc(c, m_input);
 
 					lex.type = TT_INTEGER;
 					state = 13;
 				}
 				break;
-			case 10: //real
+			case 10:
 				if (isdigit(c)) {
 					lex.token += (char) c;
 					state = 10;
 				} else {
 					if (c != -1)
-						ungetc(c, m_input); //7th
+						ungetc(c, m_input);
 
 					lex.type = TT_REAL;
 					state = 13;
 				}
 				break;
-			case 11: //string pronto
+			case 11:
 				if (c != '\''){
 					if (c == -1) {
 						lex.type = TT_UNEXPECTED_EOF;
@@ -191,7 +188,6 @@ Lexeme LexicalAnalysis::nextToken() {
 						state = 11;
 					}
 				} else {
-					lex.token += (char) c; //fechando a string
 					lex.type = TT_STRING;
 					state = 13;
 				}

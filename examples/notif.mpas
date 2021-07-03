@@ -1,0 +1,13 @@
+program simples7;
+var
+    a;
+begin
+    readln(a);
+    if not a = 3 then
+        begin
+				writeln('o not inverte');
+                writeln('O valor da variavel eh:',a) (*nao tem ; antes de end*)
+		end
+    else
+        write('Entrou no else e nao quebrou linha')
+end.

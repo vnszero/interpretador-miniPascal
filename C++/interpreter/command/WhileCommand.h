@@ -2,6 +2,7 @@
 #define WHILE_COMMAND_H
 
 #include "Command.h"
+#include "../expr/BoolExpr.h"
 
 class BoolExpr;
 

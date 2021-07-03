@@ -1,30 +1,39 @@
 #ifndef SINGLE_BOOL_EXPR_H
 #define SINGLE_BOOL_EXPR_H
 
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include "Expr.h"
 #include "BoolExpr.h"
+#include "../value/Type.h"
+#include "../value/IntegerValue.h"
+#include "../value/RealValue.h"
+#include "../value/StringValue.h"
 
-class IntExpr;
+class Expr;
+class Type;
 
 class SingleBoolExpr : public BoolExpr {
 	public:
-		enum Op {
+		enum RelOp {
 			EQUAL,
 			NOT_EQUAL,
-			LOWER,
-			GREATER,
+			LOWER_THAN,
+			GREATER_THAN,
 			LOWER_EQUAL,
 			GREATER_EQUAL
 		};
 
-		SingleBoolExpr(int line, IntExpr* left, enum Op op, IntExpr* right);
+		SingleBoolExpr(int line, Expr* left, enum RelOp op, Expr* right);
 		virtual ~SingleBoolExpr();
 
 		virtual bool expr();
 
 	private:
-		IntExpr* m_left;
-		enum Op m_op;
-		IntExpr* m_right;
+		Expr* m_left;
+		enum RelOp m_op;
+		Expr* m_right;
 
 };
 

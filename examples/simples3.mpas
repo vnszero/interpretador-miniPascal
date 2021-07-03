@@ -1,0 +1,5 @@
+program simples;
+begin
+  x := 10;
+  writeln(x)
+end.

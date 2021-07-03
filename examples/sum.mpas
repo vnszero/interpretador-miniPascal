@@ -1,0 +1,17 @@
+(*calcula o somatório de números obtidos pela entrada*)
+program somatorio;
+const 
+	MSG = 'Inserir numeros para o somatorio, numero menor que 0 encerra';
+var
+	sum, i;
+    
+begin
+    writeln(MSG);
+    sum := 0;
+    i := 0;
+    repeat
+        sum := sum + i;
+	    readln(i)
+    until i < 0;
+    writeln(sum) (* o ultimo comando antes do end nao tem ; *)
+end.

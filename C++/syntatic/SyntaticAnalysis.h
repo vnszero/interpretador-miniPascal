@@ -3,25 +3,37 @@
 
 #include "../lexical/LexicalAnalysis.h"
 
-// class IntExpr;
-// class ConstIntExpr;
-// class Variable;
-// class BoolExpr;
+class AssignCommand;
+class BlocksCommand;
+class CaseCommand;
+class CaseOption;
+class Command;
+class ForCommand;
+class IfCommand;
+class ReadCommand;
+class RepeatCommand;
+class WhileCommand;
+class WriteCommand;
 
-// class Command;
-// class AssignCommand;
-// class BlocksCommand;
-// class IfCommand;
-// class OutputCommand;
-// class WhileCommand;
+class BinaryExpr;
+class BoolExpr;
+class CompositeBoolExpr;
+class ConstExpr;
+class Expr;
+class NotBoolExpr;
+class SingleBoolExpr;
+class Variable;
+
+class IntegerValue;
+class RealValue;
+class StringValue;
 
 class SyntaticAnalysis {
  	public:
  		SyntaticAnalysis(LexicalAnalysis& lex);
  		virtual ~SyntaticAnalysis();
 
- 		//Command* start();
-		void start();
+ 		Command* start();
 
  	private:
  		LexicalAnalysis& m_lex;
@@ -31,30 +43,30 @@ class SyntaticAnalysis {
 		void eat(enum TokenType type);
 		void showError();
 
-		void procProgram();
+		BlocksCommand* procProgram();
 		void procConst();
 		void procVar();
-		void procBlock();
-		void procBody();
-		void procCmd();
-		void procAssign();
-		void procIf();
-		void procCase();
-		void procWhile();
-		void procRepeat();
-		void procFor();
-		void procWrite();
-		void procRead();
-		void procBoolExpr();
-		void procCmpExpr();
-		void procExpr();
-		void procTerm();
-		void procFactor();
-		void procValue();
-		void procId();
-		void procInteger();
-		void procReal();
-		void procString();
+		BlocksCommand* procBlock();
+		Command* procBody();
+		Command* procCmd();
+		AssignCommand* procAssign();
+		IfCommand* procIf();
+		CaseCommand* procCase();
+		WhileCommand* procWhile();
+		RepeatCommand* procRepeat();
+		ForCommand* procFor();
+		WriteCommand* procWrite();
+		ReadCommand* procRead();
+		BoolExpr* procBoolExpr();
+		SingleBoolExpr* procCmpExpr();
+		Expr* procExpr();
+		Expr* procTerm();
+		Expr* procFactor();
+		ConstExpr* procValue();
+		Variable* procId();
+		IntegerValue* procInteger();
+		RealValue* procReal();
+		StringValue* procString();
 
 };
 

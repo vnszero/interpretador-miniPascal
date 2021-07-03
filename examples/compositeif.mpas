@@ -1,0 +1,12 @@
+program simples8;
+var
+    a;
+begin
+    readln(a);
+    if a < 0 or a > 3 then
+        begin
+                writeln('O valor da variavel eh:',a) (*nao tem ; antes de end*)
+		end
+    else
+        write('Entrou no else e nao quebrou linha')
+end.

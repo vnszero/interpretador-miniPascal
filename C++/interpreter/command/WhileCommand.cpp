@@ -1,5 +1,4 @@
 #include "WhileCommand.h"
-#include "../expr/BoolExpr.h"
 
 WhileCommand::WhileCommand(int line, BoolExpr* cond, Command* cmds)
 	: Command(line), m_cond(cond), m_cmds(cmds) {

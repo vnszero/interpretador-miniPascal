@@ -2,20 +2,21 @@
 #define ASSIGN_COMMAND_H
 
 #include "Command.h"
+#include "../expr/Variable.h"
 
 class Variable;
-class IntExpr;
+class Expr;
 
 class AssignCommand : public Command {
 	public:
-		AssignCommand(int line, Variable* var, IntExpr* expr);
+		AssignCommand(int line, Variable* left, Expr* right);
 		virtual ~AssignCommand();
 
 		virtual void execute();
 
 	private:
-		Variable* m_var;
-		IntExpr* m_expr;
+		Variable* m_left;
+		Expr* m_right;
 
 };
 

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "lexical/LexicalAnalysis.h"
 #include "syntatic/SyntaticAnalysis.h"
+#include "interpreter/command/Command.h"
 
 int main(int argc, char* argv[]){
     if(argc != 2){
@@ -12,10 +13,10 @@ int main(int argc, char* argv[]){
 	try{
 		Lexeme lex;
 		LexicalAnalysis l(argv[1]);
-
 		///*
 		SyntaticAnalysis s(l);
-		s.start();
+		Command* cmd = s.start();
+		cmd->execute();
 		//*/
 
 		/*

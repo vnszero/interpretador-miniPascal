@@ -1,0 +1,13 @@
+program simples;
+const 
+    c = 5;
+var
+    a, b;
+begin
+    writeln(c);
+    b := c;
+    a := b;
+    writeln(a);
+    a := 7;
+    writeln(a) (*nao tem ; antes de end*)
+end.

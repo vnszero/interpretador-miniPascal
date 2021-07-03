@@ -1,5 +1,3 @@
-//falta apagar comentarios
-
 #ifndef TOKEN_TYPE_H
 #define TOKEN_TYPE_H
 
@@ -12,64 +10,58 @@ enum TokenType {
 	TT_END_OF_FILE    =  0,
 
 	// Symbols
-	TT_SEMICOLON,    	 	// ;				ok
-	TT_ASSIGN,        		// :=/= 			- modified
-	TT_DOT, 		  		// .				- new
-	TT_COLON,      	  		// : 				- new
-	TT_COMMA,				// ,				- new
-	TT_LEFT_PARENTHESES,	// (				- new
-	TT_RIGHT_PARENTHESES,	// )				- new
+	TT_SEMICOLON,    	 	// ;
+	TT_ASSIGN,        		// :=/=
+	TT_DOT, 		  		// .
+	TT_COLON,      	  		// :
+	TT_COMMA,				// ,
+	TT_LEFT_PARENTHESES,	// (
+	TT_RIGHT_PARENTHESES,	// )
 
 	// Logic operators
-	TT_EQUAL,         // = 				- modified
-	TT_NOT_EQUAL,     // <> 			- modified
-	TT_LOWER,         // < 				ok
-	TT_LOWER_EQUAL,   // <= 			ok
-	TT_GREATER,       // > 				ok
-	TT_GREATER_EQUAL, // >=				ok
+	TT_EQUAL,         // =
+	TT_NOT_EQUAL,     // <>
+	TT_LOWER,         // <
+	TT_LOWER_EQUAL,   // <=
+	TT_GREATER,       // >
+	TT_GREATER_EQUAL, // >=
 
 	// Arithmetic operators
-	TT_ADD,           // + 				ok
-	TT_SUB,           // - 				ok
-	TT_MUL,           // * 				ok
-	TT_DIV,           // / 				ok
-	TT_MOD,           // % 				ok
+	TT_ADD,           // +
+	TT_SUB,           // -
+	TT_MUL,           // *
+	TT_DIV,           // /
+	TT_MOD,           // %
 
 	// Keywords
-	TT_PROGRAM,       // program 		ok
-	TT_WHILE,         // while 			ok
+	TT_PROGRAM,       // program
+	TT_WHILE,         // while
 	TT_DO,            // do
-	//TT_DONE,          // done			- no longer a token
-	TT_IF,            // if				ok
-	TT_THEN,          // then			ok
-	TT_ELSE,          // else			ok
-	//TT_OUTPUT,        // output 		- no longer a token
-	//TT_TRUE,          // true			- no longer a token
-	//TT_FALSE,         // false		- no longer a token
-	//TT_READ			// read			- no longer a token
-	TT_NOT,           // not 			ok
-	TT_AND,		 	  // and 			- new
-	TT_OR, 			  // or 			- new
-	TT_READLN,        // readln 		- new
-	TT_WRITE,	  	  // write 			- new
-	TT_WRITELN,		  // writeln		- new
-	TT_REPEAT,		  // repeat 		- new
-	TT_UNTIL, 		  // until			- new
-	TT_BEGIN,		  // begin			- new
-	TT_END,			  //end 			- new
-	TT_CASE,		  //case			- new
-	TT_OF,			  //of				- new
-	TT_FOR,			  //for				- new
-	TT_TO, 			  //to				- new 18
-	TT_VAR,           // var			ok
-	TT_CONST,		  // const 			new
+	TT_IF,            // if
+	TT_THEN,          // then
+	TT_ELSE,          // else
+	TT_NOT,           // not
+	TT_AND,		 	  // and
+	TT_OR, 			  // or
+	TT_READLN,        // readln
+	TT_WRITE,	  	  // write
+	TT_WRITELN,		  // writeln
+	TT_REPEAT,		  // repeat
+	TT_UNTIL, 		  // until
+	TT_BEGIN,		  // begin
+	TT_END,			  //end
+	TT_CASE,		  //case
+	TT_OF,			  //of
+	TT_FOR,			  //for
+	TT_TO, 			  //to
+	TT_VAR,           // var
+	TT_CONST,		  // const
 
 	// Others
-	//TT_NUMBER,      // number			- no longer a token
 	TT_ID,
-	TT_INTEGER,		  // integer		new
-	TT_REAL,		  // real 			new
-	TT_STRING		  // string			new
+	TT_INTEGER,		  // integer
+	TT_REAL,		  // real
+	TT_STRING		  // string
 };
 
 inline std::string tt2str(enum TokenType type) {
@@ -86,23 +78,23 @@ inline std::string tt2str(enum TokenType type) {
 		case TT_SEMICOLON:
 			return "SEMICOLON";
 		case TT_ASSIGN:
-			return "ASSIGN";				//modified
+			return "ASSIGN";
 		case TT_DOT:
-			return "DOT";					//new
+			return "DOT";
 		case TT_COLON:
-			return "COLON";      	  		//new
+			return "COLON";
 		case TT_COMMA:
-			return "COMMA";					//new
+			return "COMMA";
 		case TT_LEFT_PARENTHESES:
-			return "LEFT_PARENTHESES";		//new
+			return "LEFT_PARENTHESES";
 		case TT_RIGHT_PARENTHESES:
-			return "RIGHT_PARENTHESES";		//new
+			return "RIGHT_PARENTHESES";
 
 		// Logic operators
 		case TT_EQUAL:
-			return "EQUAL";					//modified
+			return "EQUAL";
 		case TT_NOT_EQUAL:
-			return "NOT_EQUAL";				//modified
+			return "NOT_EQUAL";
 		case TT_LOWER:
 			return "LOWER";
 		case TT_LOWER_EQUAL:
@@ -140,45 +132,45 @@ inline std::string tt2str(enum TokenType type) {
 		case TT_NOT:
 			return "NOT";
 		case TT_AND:
-			return "AND";			//new
+			return "AND";
 		case TT_OR:
-			return "OR";			//new
+			return "OR";
 		case TT_READLN:
-			return "READLN";		//new
+			return "READLN";
 		case TT_WRITE:
-			return "WRITE";			//new
+			return "WRITE";
 		case TT_WRITELN:
-			return "WRITELN";		//new
+			return "WRITELN";
 		case TT_REPEAT:
-			return "REPEAT";		//new
+			return "REPEAT";
 		case TT_UNTIL:
-			return "UNTIL";			//new
+			return "UNTIL";
 		case TT_BEGIN:
-			return "BEGIN";			//new
+			return "BEGIN";
 		case TT_END:
-			return "END";			//new
+			return "END";
 		case TT_CASE:
-			return "CASE";			//new
+			return "CASE";
 		case TT_OF:
-			return "OF";			//new
+			return "OF";
 		case TT_FOR:
-			return "FOR";			//new
+			return "FOR";
 		case TT_TO:
-			return "TO";			//new 18
+			return "TO";
 		case TT_VAR:
-			return "VAR";			//virou palavra reservada
+			return "VAR";
 		case TT_CONST:
-			return "CONST";			//new
+			return "CONST";
 
 		// Others
 		case TT_ID:
 			return "ID";
 		case TT_INTEGER:
-			return "INTEGER";		//new
+			return "INTEGER";
 		case TT_REAL:
-			return "REAL";			//new
+			return "REAL";
 		case TT_STRING:
-			return "STRING";		//new
+			return "STRING";
 
 		default:
 			throw std::string("invalid token type");
