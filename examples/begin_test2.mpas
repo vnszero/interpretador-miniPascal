@@ -1,4 +1,4 @@
-program simples;
+program simple;
 const 
     c = 5;
 var
@@ -9,5 +9,5 @@ begin
     a := b;
     writeln(a);
     a := 7;
-    writeln(a) (*nao tem ; antes de end*)
+    writeln(a) (*there's no ; before end*)
 end.

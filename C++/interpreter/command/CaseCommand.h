@@ -24,7 +24,7 @@ class CaseCommand : public Command {
 
 		void addOption(Type* value, Command* cmd);
 		void setOtherwise(Command* cmd);
-		void execute(); //faltou no diagrama de classes
+		void execute();
 
 	private:
 		Expr* m_expr;

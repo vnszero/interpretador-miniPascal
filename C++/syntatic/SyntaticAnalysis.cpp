@@ -49,10 +49,11 @@ void SyntaticAnalysis::advance() {
 }
 
 void SyntaticAnalysis::eat(enum TokenType type) {
-	/*
+	/* turn /* into a line comment by add an / and watch it works
 	std::cout << "Expected (..., " << tt2str(type)
 	          <<  "), found (\"" + m_current.token << "\", "
 			  << tt2str(m_current.type) << ")" << std::endl;
+	// I used this to understand some grammar errors
 	//*/
 	if (type == m_current.type) {
 		advance();
@@ -188,7 +189,7 @@ BlocksCommand* SyntaticAnalysis::procBlock() {
 			if(cmd!=0){
 				block->addCommand(cmd);
 			} else {
-				showError(); //; antes do end
+				showError(); //; before end is a commum syntatic error
 			}
 		}
 	}
@@ -525,7 +526,7 @@ Variable* SyntaticAnalysis::procId() {
 	std::string name = m_current.token;
 	eat(TT_ID);
 	Variable* id = new Variable(line, name);
-	id->expr();	//essa chamadda verifica se a variavel existe na memoria
+	id->expr();	//this call verify if exists in memory
 	return id;
 }
 

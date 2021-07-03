@@ -100,13 +100,13 @@ bool SingleBoolExpr::expr() {
 				return v1->value() != v2->value();
 			default:
 				std::cout << std::setfill ('0') << std::setw (2) << SingleBoolExpr::line();
-				std::cout << ": Operacao nao suportada para strings" << std::endl;
+				std::cout << ": Unsupported expression for strings" << std::endl;
 				exit(1);
 				return false;
 		}
 	} else {
 		std::cout << std::setfill ('0') << std::setw (2) << SingleBoolExpr::line();
-		std::cout << ": Operacao logica entre tipos diferentes nao suportada" << std::endl;
+		std::cout << ": Unsuported logic expression between different types" << std::endl;
 		exit(1);
 		return false;
 	}

@@ -1,5 +1,0 @@
-(*calcula o somatório de números obtidos pela entrada*)
-program escrita;
-begin
-    write('ola mundo')
-end.

@@ -30,11 +30,10 @@ void ForCommand::execute() {
 			m_var->setValue(new IntegerValue(v));
 			m_cmd->execute();
 		}
-		//atualizar o valor da variavel
 		m_var->setValue(new IntegerValue(v));
 	} else {
 		std::cout << std::setfill ('0') << std::setw (2) << ForCommand::line();
-		std::cout << ": Commando for somente para inteiros" << std::endl;
+		std::cout << ": For command only accept integers" << std::endl;
 	}
 
 }

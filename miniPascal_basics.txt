@@ -1,0 +1,28 @@
+miniPascal basics
+
+1) Comandos:
+a. assign:		    assing an expression to a variable.
+b. if:			    executes commands based in logical conditions.	
+c. case:		    ececutes commands based in values of and expression.
+d. while:		    repeat commands while an expression is true.
+e. repeat:		    repeat commands while an expression is false.
+f. for: 		    repeat commands for a sequence of values.
+g. write/writeln: 	print on screen.
+h. readln: 		    read from keyboard.
+
+2) Constants:
+a. Integer:	        number composed by integers.
+b. Real: 	        decimal numbers.
+c. String:	        a sequence of characters between single quotes.
+d. Logic:	        logic comparisons that retuns a logic result (can't be stored in variable).
+
+3) Values:
+a. Variables 	begin with _ or letters, followed by _, letters or numbers.
+b. Constants	variables with fixed values.
+c. Literals 	integers, reals e strings.
+
+4) Operadores:
+a. math: 	    + (addition), - (subtraction), * (multiplication), / (division), % (rest, only integers).
+b. Logic: 	    = (equals), <> (different), < (lower), > (greater), <= (lower or equal), >= (greater or equal), not (negation).
+c. Connector: 	and, or.
+d. Assign: 	    :=

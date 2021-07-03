@@ -1,0 +1,13 @@
+program simple3;
+const
+    a = 2;
+var
+    b = 5;
+begin
+    (*c := 2;*) (*can't create here*)
+    (*readln(a);*) (*can't change constant, there's a verify*)
+    (*readln(d);*) (*can't create variable in read command*)
+    writeln(b);
+    readln(b);
+    writeln('the value of the variable now is:',b) (*there's no ; before end*)
+end.

@@ -1,0 +1,14 @@
+program simple4;
+var
+    a;
+begin
+    readln(a);
+    if a = 2.0 then
+        begin
+                writeln('the value of variable is:',a) (*there's no ; before end*)
+		end
+    else
+        if a <= 3 then
+            writeln('inside second if')
+        
+end.

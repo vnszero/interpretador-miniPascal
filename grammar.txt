@@ -1,4 +1,4 @@
-regras lexicas
+grammar rules
 
 <program> ::= program <id> ';'
  [ const <const> { <const> } ]

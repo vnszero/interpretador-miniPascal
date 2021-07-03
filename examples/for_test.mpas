@@ -1,0 +1,13 @@
+program simple6;
+var
+    a, b;
+begin
+    for a := 3 to 8 do
+        begin
+                writeln('the value of variable a is:',a) (*there's no ; before end*)
+		end;
+    for b := 15 to 12 do 
+        begin
+                writeln('the value of variable b is:',b) (*there's no ; before end*)
+		end
+end.

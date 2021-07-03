@@ -22,7 +22,7 @@ void ReadCommand::execute() {
 		std::cin >> value;
 
 		bool is_n_int = false;
-		char type_discover = 's'; //'s' string, 'i' inteiro, 'f' real
+		char type_discover = 's'; //'s' string, 'i' integer, 'f' real
 		int letra_anterior = 65;
 		int letra_atual = 65;
 		for(std::string::iterator letra = value.begin(),

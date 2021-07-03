@@ -54,7 +54,7 @@ Type* BinaryExpr::expr() {
 				return result;
 			default:
 				std::cout << std::setfill ('0') << std::setw (2) << BinaryExpr::line();
-				std::cout << ": Operacao % nao suportada para reais" << std::endl;
+				std::cout << ": % not allowed for real numbers" << std::endl;
 				exit(1);
 				return new IntegerValue(0);
 		}
@@ -77,7 +77,7 @@ Type* BinaryExpr::expr() {
 				return result;
 			default:
 				std::cout << std::setfill ('0') << std::setw (2) << BinaryExpr::line();
-				std::cout << ": Operacao % nao suportada para reais" << std::endl;
+				std::cout << ": % not allowed for real numbers" << std::endl;
 				exit(1);
 				return new IntegerValue(0); //para evitar falha de segmentacao
 		}
@@ -100,13 +100,13 @@ Type* BinaryExpr::expr() {
 				return result;
 			default:
 				std::cout << std::setfill ('0') << std::setw (2) << BinaryExpr::line();
-				std::cout << ": Operacao % nao suportada para reais" << std::endl;
+				std::cout << ": % not allowed for real numbers" << std::endl;
 				exit(1);
 				return new IntegerValue(0);
 		}
 	} else {
 		std::cout << std::setfill ('0') << std::setw (2) << BinaryExpr::line();
-		std::cout << ": Operacao nao suportada para string" << std::endl;
+		std::cout << ": Not allowed for strings" << std::endl;
 		exit(1);
 		return new IntegerValue(0);
 	}

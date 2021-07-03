@@ -1,0 +1,11 @@
+program simple6;
+var
+    a, b;
+begin
+    repeat
+        writeln('odd value break the loop');
+        readln(a);
+        b := a % 2;
+        writeln('current value:',a) (*there's no ; before end*)
+    until b = 1
+end.

@@ -1,0 +1,17 @@
+(*calculates the sum of all entry numbers*)
+program s;
+const 
+	MSG = 'Insert numbers for the sum, any number lower than 0 finish the loop';
+var
+	sum, i;
+    
+begin
+    writeln(MSG);
+    sum := 0;
+    i := 0;
+    repeat
+        sum := sum + i;
+	    readln(i)
+    until i < 0;
+    writeln(sum) (* there's no ; here*)
+end.

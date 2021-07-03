@@ -19,11 +19,13 @@ int main(int argc, char* argv[]){
 		cmd->execute();
 		//*/
 
-		/*
+		/* turn /* into a line comment by add an /, comment cmd->execute() and watch it works
 		while ((lex = l.nextToken()).type > 0){
 			std::cout << lex.str() << std::endl;
 		}
 		std::cout << lex.str() << std::endl;
+
+		// I used this to simulate the tokens consumption
 		//*/
 
 	} catch (const std::string& error) {

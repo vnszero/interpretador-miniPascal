@@ -1,4 +1,0 @@
-program simples;
-begin
-    writeln(10,'uma string',3.14)
-end.

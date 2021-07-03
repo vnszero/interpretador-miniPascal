@@ -1,0 +1,11 @@
+program simple5;
+var
+    a;
+begin
+    readln(a);
+    while a < 8 do
+        begin
+                writeln('The value of the variable now:',a);
+                a := a + 2 / 2 + 1 (*there's no ; before end*)
+		end
+end.

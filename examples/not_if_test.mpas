@@ -1,0 +1,13 @@
+program simple7;
+var
+    a;
+begin
+    readln(a);
+    if not a = 3 then
+        begin
+				writeln('not test');
+                writeln('the value of the variable is:',a) (*there's no ; before end*)
+		end
+    else
+        write('here we are in else')
+end.

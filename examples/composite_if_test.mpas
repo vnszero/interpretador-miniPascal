@@ -1,0 +1,12 @@
+program simple8;
+var
+    a;
+begin
+    readln(a);
+    if a < 0 or a > 3 then
+        begin
+                writeln('The value of the variable is: ',a) (*there's no ; before end*)
+		end
+    else
+        write('don't break the line')
+end.

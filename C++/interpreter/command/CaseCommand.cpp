@@ -39,7 +39,7 @@ void CaseCommand::execute(){
 					}
 				}
 		}
-		//caso padrao
+		//default
 		m_otherwise->execute();
 	} else if (val_switch->RealType == val_switch->type()) {
 		RealValue* v_switch = (RealValue*) val_switch;
@@ -57,7 +57,7 @@ void CaseCommand::execute(){
 					}
 				}
 		}
-		//caso padrao
+		//default
 		m_otherwise->execute();
 	} else if (val_switch->StringType == val_switch->type()) {
 		StringValue* v_switch = (StringValue*) val_switch;
@@ -75,7 +75,7 @@ void CaseCommand::execute(){
 					}
 				}
 		}
-		//caso padrao
+		//default
 		m_otherwise->execute();
 	}
 }

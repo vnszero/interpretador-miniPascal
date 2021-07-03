@@ -15,5 +15,5 @@ void RepeatCommand::execute() {
 			Command* cmd = *it;
 			cmd->execute();
 		}
-	} while (!m_cond->expr()); //no caso do until o bloco repete enquanto eh falso
+	} while (!m_cond->expr());
 }

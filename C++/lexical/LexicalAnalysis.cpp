@@ -20,9 +20,11 @@ Lexeme LexicalAnalysis::nextToken() {
 	while (state != 12 && state != 13) {
 		int c = fgetc(m_input);
 
-		/*
+		/* turn /* into a line comment by add an / and watch it works
 		std::cout << "[" << state << ", " << c
 		           << " ('" << (char) c << "')]" << std::endl;
+
+		// I used this cout to follow the states
 		//*/
 
 		switch (state) {
@@ -30,10 +32,10 @@ Lexeme LexicalAnalysis::nextToken() {
 				if (c == ' ' || c == '\t' || c == '\r') {
 					state = 1;
 				} else if (c == '\n') {
-					m_line++; //\n exige atualizacao do numero da linha
+					m_line++; //\n = new line
 					state = 1;
 				} else if (c == '(') {
-					lex.token = (char) c; //pode nao ser comentario
+					lex.token = (char) c;
 					state = 2;
 				} else if (c == '<'){
 					lex.token = (char) c;
@@ -54,7 +56,7 @@ Lexeme LexicalAnalysis::nextToken() {
 					state = 11;
 				} else if (c == '.' || c == ',' || c == ';' ||
 						c == '=' || c == '+' || c == '-' ||
-						c == '*' || c == '/' || c == '%' || c == ')') { //ok
+						c == '*' || c == '/' || c == '%' || c == ')') {
 					lex.token += (char) c;
 					state = 12;
 				} else {
@@ -70,8 +72,8 @@ Lexeme LexicalAnalysis::nextToken() {
 				break;
 			case 2:
 				if (c == '*') {
-					lex.token = ""; //limpar '(' do lex.token
-					state = 3; //comentario
+					lex.token = ""; //clear '(' from lex.token
+					state = 3; //comment
 				} else {
 					if (c != -1)
 						ungetc(c, m_input);

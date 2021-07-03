@@ -14,8 +14,8 @@ void Memory::registryConstant(const std::string& name, Type* value){
 
 Type* Memory::read(const std::string& name) {
 	if(Memory::m_memory.find(name) == Memory::m_memory.end()){
-		//nao existe na memoria
-		throw std::string( "nao declarada");
+		//not found in memory
+		throw std::string( "undeclared");
 		return NULL;
 	} else {
 		return Memory::m_memory[name];
@@ -24,21 +24,21 @@ Type* Memory::read(const std::string& name) {
 
 void Memory::write(const std::string& name, Type* value, bool flag) {
 	if(Memory::m_memory.find(name) == Memory::m_memory.end()){
-		//nao existe na memoria
+		//not found in memory
 		if(flag == true){
-			//declaracao de constante
+			//constant
 			Memory::registryConstant(name, value);
 		} else {
-			//declaracao de variavel
+			//variable
 			Memory::registryVariable(name, value);
 		}
 	} else {
-		//existe na memoria
+		//Found in memory
 		if(Memory::m_set.find(name) == Memory::m_set.end()){
 			Memory::m_memory[name] = value;
 		} else {
-			//Eh constante
-			throw std::string( " nao pode ter valor alterado");
+			//it's a constant
+			throw std::string( " cannot change the value");
 		}
 	}
 }
